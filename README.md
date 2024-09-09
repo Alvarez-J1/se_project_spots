@@ -18,6 +18,6 @@ This project is a webpage containing a profile and multiple different images alo
 
 ## Deployment
 
-This webpage is deployed to gifthub pages.,
+This webpage is deployed to gifthub pages.
 
--Deployment Link:
+-Deployment Link: https://alvarez-j1.github.io/se_project_spots/
