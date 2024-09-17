@@ -21,3 +21,4 @@ This project is a webpage containing a profile and multiple different images alo
 This webpage is deployed to gifthub pages.
 
 -Deployment Link: https://alvarez-j1.github.io/se_project_spots/
+-Link to the video: https://drive.google.com/file/d/1SmbJWHjAsEI7334XXzpizLBqQH7ZlZRt/view?usp=sharing
