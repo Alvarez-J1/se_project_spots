@@ -47,9 +47,6 @@
   .card__content {
     max-width: 288px;
     line-height: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .card__title {
