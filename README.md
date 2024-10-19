@@ -8,6 +8,7 @@ This project is a webpage containing a profile and multiple different images alo
 
 -HTML
 -CSS
+-Javascript
 -REsponsive Design: Media queries (@media screen and (max-width: 627px)) adjust styles for smaller screens, ensuring mobile responsiveness.
 -Flexbox: Utilized for layout flexibility with display: flex, making elements responsive, and aligning content
 -Overflow Management: Techniques like text-overflow: ellipsis and -webkit-line-clamp for handling text truncation.
