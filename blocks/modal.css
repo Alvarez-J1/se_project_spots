@@ -30,9 +30,11 @@
   box-sizing: border-box;
 }
 
-.modal__content_type_preview {
+.modal__content-preview {
   padding: 0;
   background-color: transparent;
+  max-width: fit-content;
+  position: relative;
 }
 
 .modal__image {
@@ -62,6 +64,10 @@
   line-height: 32px;
   padding: 4px 8px;
 }
+
+#addprofile-close-btn {
+  top: 0;
+}
 .modal__close-btn {
   position: absolute;
   background: transparent url(../images/close-btn-default.svg) center no-repeat;
@@ -77,20 +83,20 @@
 .modal__close-btn:hover {
   background-image: url(../images/close-hover.svg);
   cursor: pointer;
-  opacity: 0.4%;
 }
 
-.modal__close-btn_type_preview {
+.modal__close-btn-preview {
   background-image: url(../images/close-lightt.svg);
   top: 0;
-  right: -50.5px;
+  right: -48px;
   padding: 0;
   opacity: 1;
   color: rgba(255, 255, 255, 1);
 }
 
-.modal__close-btn_type_preview:hover {
-  background-image: url();
+.modal__close-btn-preview:hover {
+  background-image: url(../images/hover....png);
+  opacity: 40%;
 }
 .modal__submit-btn {
   padding: 18px 0;
@@ -102,6 +108,7 @@
   line-height: 16px;
   font-size: 16px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -151,15 +158,12 @@
     padding: 12px;
   }
 
-  .modal__content_type_preview {
+  .modal__content-preview {
     padding: 0;
-    max-width: 288px; /* Optional: set a max-width to prevent oversized modals */
   }
 
   .modal__image {
     padding: 0;
-    max-width: fit-content;
-    max-height: fit-content;
   }
 
   .modal__caption {
@@ -171,10 +175,6 @@
   .modal__title {
     font-size: 20px;
     margin: 10px 0 34px;
-  }
-
-  .modal__close-btn_type_preview {
-    bottom: 10px;
   }
 
   .modal__label {
@@ -190,6 +190,9 @@
     right: 12px;
   }
 
+  .modal__close-btn-preview {
+    top: -50px;
+  }
   .modal__close-btn-img {
     height: 40px;
     width: 40px;
@@ -201,7 +204,47 @@
 }
 
 @media screen and (max-width: 320px) {
+  .modal {
+    padding: 0 10px;
+  }
+
+  .modal__content {
+    padding: 0 12px;
+  }
   .modal__image {
     max-width: 288px;
+    max-height: fit-content;
+  }
+
+  #addprofile-close-btn {
+    top: 0;
+  }
+
+  .modal__caption {
+    margin-top: 8px;
+  }
+  .modal__input {
+    margin-bottom: 0;
+  }
+  #add-profile-close-btn {
+    top: 1px;
+  }
+  .modal__close-btn {
+    top: 1px;
+  }
+
+  .modal__submit-btn {
+    margin-bottom: 12px;
+  }
+
+  .modal__content-preview {
+    padding: 0 6px;
+    max-width: 320px;
+    position: relative;
+  }
+
+  .modal__close-btn-preview {
+    top: -50px;
+    right: -1px;
   }
 }

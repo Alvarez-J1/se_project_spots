@@ -20,7 +20,7 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  max-width: 220px;
+  max-width: 390px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -42,7 +42,7 @@
 }
 
 .card__like-btn_liked {
-  background-image: url("../images/Liked.svg");
+  background-image: url("../images/Heart.svg");
   opacity: 1;
 }
 
@@ -60,6 +60,7 @@
   position: absolute;
   border: none;
   background-color: none;
+  cursor: pointer;
 }
 
 .card__remove-btn_hovered {
@@ -78,7 +79,7 @@
   .card__title {
     font-size: 16px;
     line-height: 16px;
-    max-width: 95px;
+    max-width: 260px;
   }
 
   .card__like-btn {
