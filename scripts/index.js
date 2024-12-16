@@ -47,6 +47,7 @@ const editModalNameInput = editProfileModal.querySelector(
 );
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
+const cardSubmitButton = cardModal.querySelector(".modal__submit-btn");
 const cardModalCloseBtn = cardModal.querySelector("#add-profile-close-btn");
 // Card-related
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
@@ -59,6 +60,16 @@ const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(
   ".modal__close-btn-preview"
 );
+
+const selectModals = document.querySelectorAll(".modal");
+
+selectModals.forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.remove("modal_opened");
+    }
+  });
+});
 
 previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
@@ -95,10 +106,23 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscapeKey);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  if (!document.querySelector(".modal_opened")) {
+    document.removeEventListener("keydown", handleEscapeKey);
+  }
+}
+
+function handleEscapeKey(event) {
+  if (event.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened"); // Find the currently open modal
+    if (openModal) {
+      closeModal(openModal);
+    }
+  }
 }
 
 function handleEditFormSubmit(evt) {
@@ -116,14 +140,18 @@ function handleAddCardSubmit(evt) {
   };
   const cardEl = getCardElement(inputValues);
   cardsList.prepend(cardEl);
-
   evt.target.reset();
-
+  disableButton(cardSubmitButton, settings);
   closeModal(cardModal);
 }
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileNameElement.textContent;
   editModalDescriptionInput.value = profileDescriptionElement.textContent;
+  resetValidation(
+    editFormElement,
+    [editModalNameInput, editModalDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 editModalCloseBtn.addEventListener("click", () => {
