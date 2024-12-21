@@ -61,7 +61,7 @@ const previewModalCloseBtn = previewModal.querySelector(
   ".modal__close-btn-preview"
 );
 
-modals = document.querySelectorAll(".modal");
+const modals = document.querySelectorAll(".modal");
 
 modals.forEach((modal) => {
   modal.addEventListener("click", (event) => {
@@ -136,18 +136,24 @@ function handleEditFormSubmit(evt) {
   closeModal(editProfileModal);
 }
 
+function renderCard(item, method = "prepend") {
+  const cardElement = getCardElement(item);
+  cardsList[method](cardElement);
+}
+
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const inputValues = {
     name: cardNameInput.value,
     link: cardLinkInput.value,
   };
-  const cardEl = getCardElement(inputValues);
-  cardsList.prepend(cardEl);
+
+  renderCard(inputValues);
   evt.target.reset();
   disableButton(cardSubmitButton, settings);
   closeModal(cardModal);
 }
+
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileNameElement.textContent;
   editModalDescriptionInput.value = profileDescriptionElement.textContent;
@@ -165,11 +171,6 @@ profileAddButton.addEventListener("click", () => {
 
 profileForm.addEventListener("submit", handleEditFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
-
-function renderCard(item, method = "prepend") {
-  const cardElement = getCardElement(item);
-  cardsList[method](cardElement);
-}
 
 initialCards.forEach((item) => {
   renderCard(item);
