@@ -14,7 +14,7 @@ This project is a webpage containing a profile and multiple different images alo
 -Overflow Management: Techniques like text-overflow: ellipsis and -webkit-line-clamp for handling text truncation.
 -BEM Methodology
 -Typography: Various properties like font-size, line-height, and font-weight are used to control text appearance.
--Css Grid Layout: The .cards\_\_list uses grid-template-columns and gap to create a responsive grid layout with dynamic column adjustments (auto-fit), making it adaptable to different screen sizes.
+-Css Grid Layout: The .cards\_\_list uses grid-template-columns and gap to create a responsive grid layout with dynamic column adjustments (auto-fit), making it adaptable to different screen sizes..
 -list Styling: The list-style-type: none removes default list styling.
 
 ## Deployment
