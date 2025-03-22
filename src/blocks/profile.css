@@ -4,12 +4,52 @@
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
 
-.profile__avatar {
+.profile__avatar-btn {
+  position: absolute;
+  width: 100%;
+  visibility: hidden;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile__avatar-container {
   margin-right: 20px;
   border-radius: 5%;
   height: 190px;
   width: 190px;
+  position: relative;
+}
+
+.profile__avatar-container:hover .profile__avatar-btn {
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.profile__avatar-btn::after {
+  content: "Edit Avatar";
+  margin-bottom: 12px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: rgba(255, 255, 255, 1);
+}
+
+.profile__avatar {
   object-fit: cover;
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+.profile__pencil-icon {
+  margin-bottom: 12px;
+  margin-right: 8px;
 }
 
 .profile__column {
@@ -105,8 +145,33 @@
     padding-top: 20px;
   }
 
-  .profile__avatar {
-    margin-bottom: 12px;
+  .profile__avatar-container {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+  }
+
+  .profile__avatar-btn {
+    visibility: visible;
+    background: none;
+    border: none;
+  }
+
+  .profile__pencil-icon {
+    content: url("../images/pencil-icon-mobile.svg");
+    position: absolute;
+    width: 23px;
+    right: -5px;
+    bottom: -8px;
+  }
+
+  .profile__avatar-btn::after {
+    content: "";
+  }
+
+  .profile__edit-btn {
+    display: flex;
+    justify-content: center;
   }
 
   .profile__column {
@@ -118,6 +183,8 @@
     margin-bottom: 6px;
     line-height: 20px;
     font-weight: 500;
+    margin-bottom: 6px;
+    margin-top: 12px;
   }
 
   .profile__description {
@@ -125,23 +192,13 @@
     margin-bottom: 32px;
   }
 
-  .profile__edit-btn {
-    justify-content: center;
-    opacity: 70%;
-    border-radius: 90px;
-  }
-
   .profile__pencil-icn {
     margin: 0;
     margin-right: 8px;
     width: 18.48px;
     line-height: 3.21px;
-  }
-
-  .profile__avatar {
-    margin-right: 0;
-    height: 80px;
-    width: 80px;
+    right: -5px;
+    bottom: -8px;
   }
 
   .profile__add-btn {
