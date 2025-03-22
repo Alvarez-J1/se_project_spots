@@ -25,9 +25,90 @@
   background-color: #fff;
   padding: 32px 50px;
   max-width: 730px;
+  min-width: 630px;
   position: relative;
   width: 100%;
   box-sizing: border-box;
+}
+
+#delete-form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#delete-content {
+  width: 630px;
+  padding: 20px 20px 32px;
+  border-radius: 8px;
+}
+
+#delete-title {
+  margin: 12px 0 32px;
+  justify-content: center;
+  display: flex;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+#close-btn {
+  position: absolute;
+  right: -45px;
+  top: -3px;
+  width: 40px;
+  background: transparent url(../images/close-button.svg) center no-repeat;
+  padding: 0;
+}
+
+#delete-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(255, 101, 101, 1);
+  color: rgba(33, 33, 33, 1);
+  border: none;
+}
+
+#edit-avatar-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal__label_type_avatar {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__input_type_avatar {
+  color: rgba(33, 33, 33, 0.3);
+}
+
+#cancel-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  color: black;
+}
+
+#avatar__submit-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .modal__content-preview {
