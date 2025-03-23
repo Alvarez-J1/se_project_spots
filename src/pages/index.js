@@ -51,40 +51,11 @@ import {
 //   },
 // ];
 
-const api = new Api({
-  baseUrl: "https://around-api.en.tripleten-services.com/v1",
-  headers: {
-    authorization: "40811508-9c36-428c-adef-ee0a4e68ed5a",
-    "Content-Type": "application/json",
-  },
-});
-
-api
-  .getAppInfo()
-  .then(([cards, userData]) => {
-    console.log(cards);
-    console.log(userData);
-
-    document.querySelector(".profile__avatar").src = userData.avatar;
-    document.querySelector(".profile__name").textContent = userData.name;
-    document.querySelector(".profile__description").textContent =
-      userData.about;
-    console.log("Avatar URL:", userData.avatar);
-
-    console.log("User Data:", userData);
-    cards.forEach((item) => {
-      renderCard(item);
-    });
-  })
-
-  .catch((err) => {
-    console.error(err);
-  });
-
 //profile elements
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileAddButton = document.querySelector(".profile__add-btn");
+const profileAvatar = document.querySelector(".profile__avatar");
 const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
@@ -92,6 +63,7 @@ const profileDescriptionElement = document.querySelector(
 const editModalDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
+
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 // Form Elements
 const profileForm = document.forms["profile-form"];
@@ -152,6 +124,35 @@ closeButtons.forEach((button) => {
   button.addEventListener("click", () => closeModal(popup));
 });
 
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "40811508-9c36-428c-adef-ee0a4e68ed5a",
+    "Content-Type": "application/json",
+  },
+});
+
+api
+  .getAppInfo()
+  .then(([cards, userData]) => {
+    console.log(cards);
+    console.log(userData);
+
+    profileAvatar.src = userData.avatar;
+    profileNameElement.textContent = userData.name;
+    profileDescriptionElement.textContent = userData.about;
+    console.log("Avatar URL:", userData.avatar);
+
+    console.log("User Data:", userData);
+    cards.forEach((item) => {
+      renderCard(item);
+    });
+  })
+
+  .catch((err) => {
+    console.error(err);
+  });
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -207,10 +208,10 @@ function handleEscapeKey(event) {
   }
 }
 
-function handleLike(evt, id) {
+function handleLike(evt, cardId) {
   const isLiked = evt.target.classList.contains("card__like-btn_liked");
   api
-    .changeLikeStatus(id, isLiked)
+    .changeLikeStatus(cardId, isLiked)
     .then((updatedData) => {
       const updatedIsLiked = updatedData.likes && updatedData.likes.length > 0;
 
@@ -260,7 +261,7 @@ function handleAvatarFormSubmit(evt) {
   api
     .editAvatar(avatar)
     .then((userData) => {
-      document.querySelector(".profile__avatar").src = userData.avatar;
+      profileAvatar.src = userData.avatar;
       evt.target.reset();
       closeModal(avatarModal);
     })
