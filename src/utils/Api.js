@@ -4,6 +4,17 @@ export default class Api {
     this._headers = headers;
   }
 
+  // Unified internal method for making requests
+  _request(endpoint, options = {}) {
+    const finalOptions = {
+      headers: this._headers,
+      ...options,
+    };
+
+    const url = `${this._baseUrl}${endpoint}`;
+    return fetch(url, finalOptions).then(this._processResponse);
+  }
+
   _processResponse(res) {
     if (res.ok) {
       return res.json();
@@ -12,60 +23,50 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers,
-    }).then(this._processResponse);
-  }
-
-  getAppInfo() {
-    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
-  }
-
-  getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
-      headers: this._headers,
-    }).then(this._processResponse);
+    return this._request("/users/me");
   }
 
   editUserInfo({ name, about }) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return this._request("/users/me", {
       method: "PATCH",
-      headers: this._headers,
       body: JSON.stringify({
         name,
         about,
       }),
-    }).then(this._processResponse);
-    // other methods for working with the API
+    });
+  }
+
+  editAvatar(avatar) {
+    return this._request("/users/me/avatar", {
+      method: "PATCH",
+      body: JSON.stringify({ avatar }),
+    });
+  }
+
+  getInitialCards() {
+    return this._request("/cards");
   }
 
   addNewCard({ name, link }) {
-    return fetch(`${this._baseUrl}/cards`, {
+    return this._request("/cards", {
       method: "POST",
-      headers: this._headers,
       body: JSON.stringify({ name, link }),
-    }).then(this._processResponse);
-  } // export the class
-
-  editAvatar(avatar) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
-      method: "PATCH",
-      headers: this._headers,
-      body: JSON.stringify({ avatar }),
-    }).then(this._processResponse);
+    });
   }
 
-  removeCard(id) {
-    return fetch(`${this._baseUrl}/cards/${id}`, {
+  removeCard(cardId) {
+    return this._request(`/cards/${cardId}`, {
       method: "DELETE",
-      headers: this._headers,
-    }).then(this._processResponse);
+    });
   }
 
-  changeLikeStatus(id, isLiked) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+  changeLikeStatus(cardId, isLiked) {
+    return this._request(`/cards/${cardId}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
-      headers: this._headers,
-    }).then(this._processResponse);
+    });
+  }
+
+  getAppInfo() {
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 }
