@@ -1,25 +1,26 @@
-# Project 3: Spots
+# Spots
 
 ## Description
+Spots is a responsive webpage that displays a user profile and a collection of image cards.  
+The project focuses on layout, responsiveness, and interactive UI behavior across common screen sizes.
 
-This project is a webpage containing a profile and multiple different images along with their names. The project is made so all the elements are displayed correctly on popular screen sizes.
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Flexbox
+- CSS Grid
+- BEM Methodology
+- Responsive Design (media queries)
 
-## Tech Stack
-
--HTML
--CSS
--Javascript
--REsponsive Design: Media queries (@media screen and (max-width: 627px)) adjust styles for smaller screens, ensuring mobile responsiveness.
--Flexbox: Utilized for layout flexibility with display: flex, making elements responsive, and aligning content
--Overflow Management: Techniques like text-overflow: ellipsis and -webkit-line-clamp for handling text truncation.
--BEM Methodology
--Typography: Various properties like font-size, line-height, and font-weight are used to control text appearance.
--Css Grid Layout: The .cards\_\_list uses grid-template-columns and gap to create a responsive grid layout with dynamic column adjustments (auto-fit), making it adaptable to different screen sizes.
--list Styling: The list-style-type: none removes default list styling.
+## Project Details
+- Responsive layout optimized for desktop and mobile screens
+- Image cards with text overflow handling
+- Modular CSS structure using BEM naming conventions
+- Interactive UI elements implemented with JavaScript
 
 ## Deployment
+The project is deployed using GitHub Pages.
 
-This webpage is deployed to gifthub pages.
-
--Deployment Link: https://alvarez-j1.github.io/se_project_spots/
--Link to the video: https://drive.google.com/file/d/1SmbJWHjAsEI7334XXzpizLBqQH7ZlZRt/view?usp=sharing
+Live link:  
+https://alvarez-j1.github.io/se_project_spots/
