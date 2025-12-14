@@ -25,9 +25,105 @@
   background-color: #fff;
   padding: 32px 50px;
   max-width: 730px;
+  min-width: 300px;
   position: relative;
   width: 100%;
   box-sizing: border-box;
+  border-radius: 8px;
+}
+
+#delete-form {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#delete-content {
+  width: 630px;
+  padding: 20px 20px 32px;
+  border-radius: 8px;
+}
+
+#delete-title {
+  margin: 12px 0 32px;
+  justify-content: center;
+  display: flex;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+#close-btn {
+  position: absolute;
+  right: -45px;
+  top: -3px;
+  width: 40px;
+  background: transparent url(../images/close-button.svg) center no-repeat;
+  padding: 0;
+}
+
+#close-btn:hover {
+  background-image: url(../images/close-hover.svg);
+  cursor: pointer;
+}
+
+#delete-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(255, 101, 101, 1);
+  color: rgba(33, 33, 33, 1);
+  border: none;
+}
+
+#delete-btn:hover {
+  background-color: rgba(255, 51, 51, 1);
+}
+
+#edit-avatar-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+}
+
+.modal__label_type_avatar {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__input_type_avatar {
+  color: rgba(33, 33, 33, 0.3);
+}
+
+#cancel-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  color: black;
+}
+
+#cancel-btn:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+#avatar__submit-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
 }
 
 .modal__content-preview {
@@ -158,8 +254,60 @@
 }
 
 @media screen and (max-width: 627px) {
-  .modal {
-    padding: 0 10px;
+  #delete-content {
+    width: 300px;
+    height: 208px;
+    padding: 12px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #delete-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  #delete-form {
+    display: flex;
+    flex-direction: column;
+    width: 156px;
+    height: 116px;
+    gap: 12px;
+  }
+
+  #delete-btn {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  #cancel-btn {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  #delete-title {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  #close-btn {
+    top: -50px;
+    right: 1px;
+  }
+
+  #edit-avatar-title {
+    font-size: 20px;
   }
 
   .modal__inner {
