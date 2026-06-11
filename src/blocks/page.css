@@ -5,6 +5,11 @@
   font-weight: 500;
 }
 
+:focus-visible {
+  outline: 3px solid #2d7ff9;
+  outline-offset: 2px;
+}
+
 .page__section {
   max-width: 1280px;
   margin: 0 auto;
