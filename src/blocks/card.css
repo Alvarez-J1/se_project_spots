@@ -1,3 +1,12 @@
+.card__image-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 .card__image {
   height: 413px;
   width: 100%;

@@ -122,6 +122,7 @@ function getCardElement(data) {
     .cloneNode(true);
   const cardNameEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
+  const cardImageBtn = cardElement.querySelector(".card__image-btn");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardRemoveBtn = cardElement.querySelector(".card__remove-btn");
 
@@ -134,7 +135,7 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
-  cardImageEl.addEventListener("click", () => {
+  cardImageBtn.addEventListener("click", () => {
     openModal(previewModal);
     previewModalImageEl.src = data.link;
     previewModalCaptionEl.textContent = data.name;
