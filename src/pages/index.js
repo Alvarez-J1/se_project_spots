@@ -130,6 +130,7 @@ function getCardElement(data) {
     cardLikeBtn.classList.add("card__like-btn_liked");
     cardElement.classList.add("card_liked");
   }
+  cardLikeBtn.setAttribute("aria-pressed", data.isLiked ? "true" : "false");
 
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
@@ -177,13 +178,12 @@ function handleLike(evt, cardId) {
   api
     .changeLikeStatus(cardId, isLiked)
     .then((updatedData) => {
-      const updatedIsLiked = updatedData.likes && updatedData.likes.length > 0;
-
       if (updatedData.isLiked) {
         evt.target.classList.add("card__like-btn_liked");
       } else {
         evt.target.classList.remove("card__like-btn_liked");
       }
+      evt.target.setAttribute("aria-pressed", updatedData.isLiked ? "true" : "false");
     })
     .catch(console.error);
 }
