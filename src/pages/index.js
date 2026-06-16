@@ -154,14 +154,24 @@ function getCardElement(data) {
   return cardElement;
 }
 
+let lastFocusedElement;
+
 function openModal(modal) {
+  lastFocusedElement = document.activeElement;
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscapeKey);
+  const closeBtn = modal.querySelector(".modal__close-btn");
+  if (closeBtn) {
+    closeBtn.focus();
+  }
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEscapeKey);
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
 }
 
 function handleEscapeKey(event) {
