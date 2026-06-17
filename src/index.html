@@ -75,13 +75,18 @@
         <p class="footer__copyright">2023 © Spots</p>
       </footer>
       <div class="modal" id="edit-profile-modal">
-        <div class="modal__content">
+        <div
+          class="modal__content"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="edit-profile-title"
+        >
           <button
             type="button"
             class="modal__close-btn"
             aria-label="Close modal"
           ></button>
-          <h2 class="modal__title">Edit profile</h2>
+          <h2 class="modal__title" id="edit-profile-title">Edit profile</h2>
           <form name="profile-form" class="modal__form" novalidate>
             <label for="profile-name-input" class="modal__label">
               Name
@@ -118,14 +123,19 @@
       </div>
 
       <div class="modal" id="add-card-modal">
-        <div class="modal__content">
+        <div
+          class="modal__content"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="add-card-title"
+        >
           <button
             type="button"
             id="add-profile-close-btn"
             class="modal__close-btn"
             aria-label="Close modal"
           ></button>
-          <h2 class="modal__title">New post</h2>
+          <h2 class="modal__title" id="add-card-title">New post</h2>
           <form name="card-form" class="modal__form" novalidate>
             <label for="add-card-link-input" class="modal__label">
               Image link
@@ -158,7 +168,12 @@
         </div>
       </div>
       <div class="modal" id="preview-modal">
-        <div class="modal__content-preview">
+        <div
+          class="modal__content-preview"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
+        >
           <button
             aria-label="Close modal"
             class="modal__close-btn modal__close-btn-preview"
@@ -171,7 +186,13 @@
     </div>
 
     <div class="modal" id="delete-modal">
-      <div class="modal__content" id="delete-content">
+      <div
+        class="modal__content"
+        id="delete-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="delete-title"
+      >
         <button
           type="button"
           class="modal__close-btn"
@@ -197,7 +218,12 @@
       </div>
     </div>
     <div class="modal" id="avatar-modal">
-      <div class="modal__content">
+      <div
+        class="modal__content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="edit-avatar-title"
+      >
         <button
           type="button"
           class="modal__close-btn"
