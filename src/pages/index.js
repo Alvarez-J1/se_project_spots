@@ -116,6 +116,9 @@ api
     console.error(err);
   });
 
+const PLACEHOLDER_IMAGE =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ece3cf'/%3E%3Ctext x='50%25' y='50%25' fill='%23a89c80' font-family='Poppins, Arial, sans-serif' font-size='22' text-anchor='middle' dominant-baseline='middle'%3EImage unavailable%3C/text%3E%3C/svg%3E";
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -133,8 +136,12 @@ function getCardElement(data) {
   cardLikeBtn.setAttribute("aria-pressed", data.isLiked ? "true" : "false");
 
   cardNameEl.textContent = data.name;
-  cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
+  cardImageEl.addEventListener("error", () => {
+    cardImageEl.src = PLACEHOLDER_IMAGE;
+    cardImageEl.alt = `${data.name} (image unavailable)`;
+  });
+  cardImageEl.src = data.link;
 
   cardImageBtn.addEventListener("click", () => {
     openModal(previewModal);
