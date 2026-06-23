@@ -12,6 +12,11 @@ PencilImage.src = editBtnSrc;
 const logoImage = document.getElementById("logo__image");
 logoImage.src = logoSrc;
 
+const footerYear = document.querySelector(".footer__year");
+if (footerYear) {
+  footerYear.textContent = new Date().getFullYear();
+}
+
 import "./index.css";
 import {
   enableValidation,
