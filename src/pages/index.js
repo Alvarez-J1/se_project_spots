@@ -34,6 +34,9 @@ const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
 );
+const profileSection = document.querySelector(".profile");
+const cardsSection = document.querySelector(".cards");
+const profileLoadError = document.getElementById("profile-load-error");
 const editModalDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
@@ -119,6 +122,11 @@ api
 
   .catch((err) => {
     console.error(err);
+    profileLoadError.hidden = false;
+  })
+  .finally(() => {
+    profileSection.removeAttribute("aria-busy");
+    cardsSection.removeAttribute("aria-busy");
   });
 
 const PLACEHOLDER_IMAGE =

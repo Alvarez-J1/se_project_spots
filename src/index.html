@@ -34,7 +34,7 @@
         <img id="logo__image" alt="Spot logo" class="header__logo" />
       </header>
       <main class="content">
-        <section class="profile page__section">
+        <section class="profile page__section" aria-busy="true">
           <div class="profile__avatar-container">
             <button class="profile__avatar-btn" type="button" aria-label="Edit profile avatar">
               <img
@@ -46,8 +46,16 @@
             <img alt="profile avatar" class="profile__avatar" />
           </div>
           <div class="profile__column">
-            <h1 class="profile__name">Bessie Coleman</h1>
-            <p class="profile__description">Civil Aviator</p>
+            <h1 class="profile__name"></h1>
+            <p class="profile__description"></p>
+            <p
+              class="profile__load-error"
+              id="profile-load-error"
+              role="alert"
+              hidden
+            >
+              Could not load your profile. Please refresh and try again.
+            </p>
             <button type="button" class="profile__edit-btn">
               <img
                 id="pencil__image"
@@ -61,7 +69,7 @@
             Post
           </button>
         </section>
-        <section class="cards page__section">
+        <section class="cards page__section" aria-busy="true">
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
