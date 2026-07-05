@@ -19,7 +19,16 @@ export default class Api {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`Error: ${res.status}`);
+    return res
+      .json()
+      .catch(() => null)
+      .then((body) => {
+        const message =
+          (body && body.message) ||
+          res.statusText ||
+          `Request failed with status ${res.status}`;
+        return Promise.reject(new Error(message));
+      });
   }
 
   getUserInfo() {
@@ -60,13 +69,4 @@ export default class Api {
     });
   }
 
-  changeLikeStatus(cardId, isLiked) {
-    return this._request(`/cards/${cardId}/likes`, {
-      method: isLiked ? "DELETE" : "PUT",
-    });
-  }
-
-  getAppInfo() {
-    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
-  }
-}
+  changeLi
