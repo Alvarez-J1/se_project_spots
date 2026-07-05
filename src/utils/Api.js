@@ -69,4 +69,13 @@ export default class Api {
     });
   }
 
-  changeLi
+  changeLikeStatus(cardId, isLiked) {
+    return this._request(`/cards/${cardId}/likes`, {
+      method: isLiked ? "DELETE" : "PUT",
+    });
+  }
+
+  getAppInfo() {
+    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
+  }
+}
