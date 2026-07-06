@@ -110,6 +110,14 @@ const api = new Api({
   },
 });
 
+const PLACEHOLDER_IMAGE =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ece3cf'/%3E%3Ctext x='50%25' y='50%25' fill='%23a89c80' font-family='Poppins, Arial, sans-serif' font-size='22' text-anchor='middle' dominant-baseline='middle'%3EImage unavailable%3C/text%3E%3C/svg%3E";
+
+profileAvatar.addEventListener("error", () => {
+  profileAvatar.src = PLACEHOLDER_IMAGE;
+  profileAvatar.alt = "Profile picture unavailable";
+});
+
 api
   .getAppInfo()
   .then(([cards, userData]) => {
@@ -125,15 +133,16 @@ api
 
   .catch((err) => {
     console.error(err);
+    profileLoadError.textContent =
+      err instanceof Error && err.message
+        ? err.message
+        : "Could not load your profile. Please refresh and try again.";
     profileLoadError.hidden = false;
   })
   .finally(() => {
     profileSection.removeAttribute("aria-busy");
     cardsSection.removeAttribute("aria-busy");
   });
-
-const PLACEHOLDER_IMAGE =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23ece3cf'/%3E%3Ctext x='50%25' y='50%25' fill='%23a89c80' font-family='Poppins, Arial, sans-serif' font-size='22' text-anchor='middle' dominant-baseline='middle'%3EImage unavailable%3C/text%3E%3C/svg%3E";
 
 function updateProfileAvatarAlt(name) {
   profileAvatar.alt = name ? `${name}'s profile picture` : "Profile picture";
