@@ -253,6 +253,14 @@
   width: 630px;
 }
 
+.modal__form-error {
+  margin: 0 0 24px;
+  color: rgba(255, 0, 0, 0.7);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17.6px;
+}
+
 @media screen and (max-width: 627px) {
   #delete-content {
     width: 300px;

@@ -1,5 +1,5 @@
 import logoSrc from "../images/logo.svg";
-import { setButtonText } from "../utils/helpers.js";
+import { setButtonText, showFormError, clearFormError } from "../utils/helpers.js";
 import editBtnSrc from "../images/editBtnSrc.svg";
 import plusSrc from "../images/plus.svg";
 import Api from "../utils/Api.js";
@@ -200,6 +200,7 @@ function openModal(modal) {
   lastFocusedElement = document.activeElement;
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscapeKey);
+  modal.querySelectorAll(".modal__form").forEach(clearFormError);
   const closeBtn = modal.querySelector(".modal__close-btn");
   if (closeBtn) {
     closeBtn.focus();
@@ -246,6 +247,8 @@ function handleDeleteCard(cardElement, cardId) {
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
+  clearFormError(form);
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
 
@@ -258,10 +261,13 @@ function handleEditFormSubmit(evt) {
       profileNameElement.textContent = data.name;
       profileDescriptionElement.textContent = data.about;
       updateProfileAvatarAlt(data.name);
-      evt.target.reset();
+      form.reset();
       closeModal(editProfileModal);
     })
-    .catch(console.error)
+    .catch((err) => {
+      console.error(err);
+      showFormError(form, err.message);
+    })
     .finally(() => {
       setButtonText(submitBtn, false);
     });
@@ -269,6 +275,8 @@ function handleEditFormSubmit(evt) {
 
 function handleAvatarFormSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
+  clearFormError(form);
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
 
@@ -277,10 +285,13 @@ function handleAvatarFormSubmit(evt) {
     .editAvatar(avatar)
     .then((userData) => {
       profileAvatar.src = userData.avatar;
-      evt.target.reset();
+      form.reset();
       closeModal(avatarModal);
     })
-    .catch(console.error)
+    .catch((err) => {
+      console.error(err);
+      showFormError(form, err.message);
+    })
     .finally(() => {
       setButtonText(submitBtn, false);
     });
@@ -288,16 +299,21 @@ function handleAvatarFormSubmit(evt) {
 
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
+  clearFormError(form);
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true, "Delete", "Deleting...");
   api
-    .removeCard(selectedCardId) // pass the ID the the api function
+    .removeCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
       updateCardsEmptyState();
       closeModal(deleteModal);
     })
-    .catch(console.error)
+    .catch((err) => {
+      console.error(err);
+      showFormError(form, err.message);
+    })
     .finally(() => {
       setButtonText(submitBtn, false, "Delete", "Deleting...");
     });
@@ -311,6 +327,8 @@ function renderCard(item, method = "prepend") {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
+  clearFormError(form);
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
   const inputValues = {
@@ -321,11 +339,14 @@ function handleAddCardSubmit(evt) {
     .addNewCard(inputValues)
     .then((data) => {
       renderCard(data);
-      evt.target.reset();
+      form.reset();
       disableButton(cardSubmitButton, settings);
       closeModal(cardModal);
     })
-    .catch(console.error)
+    .catch((err) => {
+      console.error(err);
+      showFormError(form, err.message);
+    })
     .finally(() => {
       setButtonText(submitBtn, false);
     });
