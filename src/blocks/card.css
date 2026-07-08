@@ -72,8 +72,15 @@
   cursor: pointer;
 }
 
-.card:hover .card__remove-btn {
-  visibility: visible;
+@media (hover: hover) {
+  .card__remove-btn {
+    visibility: hidden;
+  }
+
+  .card:hover .card__remove-btn,
+  .card:focus-within .card__remove-btn {
+    visibility: visible;
+  }
 }
 
 .card__remove-btn:hover {
