@@ -69,6 +69,7 @@ const cancelBtn = deleteModal.querySelector("#cancel-btn");
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 const cardsEmpty = document.getElementById("cards-empty");
+const cardsStatus = document.getElementById("cards-status");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 
@@ -150,6 +151,17 @@ function updateProfileAvatarAlt(name) {
 
 function updateCardsEmptyState() {
   cardsEmpty.hidden = cardsList.children.length > 0;
+}
+
+function showCardsStatus(message) {
+  cardsStatus.textContent =
+    message || "Could not update like. Please try again.";
+  cardsStatus.hidden = false;
+}
+
+function clearCardsStatus() {
+  cardsStatus.hidden = true;
+  cardsStatus.textContent = "";
 }
 
 function getCardElement(data) {
@@ -235,8 +247,12 @@ function handleLike(evt, cardId) {
         evt.target.classList.remove("card__like-btn_liked");
       }
       evt.target.setAttribute("aria-pressed", updatedData.isLiked ? "true" : "false");
+      clearCardsStatus();
     })
-    .catch(console.error);
+    .catch((err) => {
+      console.error(err);
+      showCardsStatus(err.message);
+    });
 }
 
 function handleDeleteCard(cardElement, cardId) {
