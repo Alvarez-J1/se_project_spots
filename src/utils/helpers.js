@@ -2,12 +2,18 @@ export function setButtonText(
   submitBtn,
   isLoading,
   defaultText = "Save",
-  loadingText = "Saving.."
+  loadingText = "Saving…"
 ) {
   if (isLoading) {
     submitBtn.textContent = loadingText;
+    submitBtn.disabled = true;
+    submitBtn.setAttribute("aria-busy", "true");
   } else {
     submitBtn.textContent = defaultText;
+    submitBtn.removeAttribute("aria-busy");
+    if (!submitBtn.classList.contains("modal__submit-btn_disabled")) {
+      submitBtn.disabled = false;
+    }
   }
 }
 
