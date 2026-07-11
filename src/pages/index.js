@@ -164,6 +164,11 @@ function clearCardsStatus() {
   cardsStatus.textContent = "";
 }
 
+function updateLikeButtonState(button, isLiked) {
+  button.setAttribute("aria-pressed", isLiked ? "true" : "false");
+  button.setAttribute("aria-label", isLiked ? "Unlike" : "Like");
+}
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -178,7 +183,7 @@ function getCardElement(data) {
     cardLikeBtn.classList.add("card__like-btn_liked");
     cardElement.classList.add("card_liked");
   }
-  cardLikeBtn.setAttribute("aria-pressed", data.isLiked ? "true" : "false");
+  updateLikeButtonState(cardLikeBtn, Boolean(data.isLiked));
 
   cardNameEl.textContent = data.name;
   cardImageEl.alt = data.name;
@@ -246,7 +251,7 @@ function handleLike(evt, cardId) {
       } else {
         evt.target.classList.remove("card__like-btn_liked");
       }
-      evt.target.setAttribute("aria-pressed", updatedData.isLiked ? "true" : "false");
+      updateLikeButtonState(evt.target, Boolean(updatedData.isLiked));
       clearCardsStatus();
     })
     .catch((err) => {
