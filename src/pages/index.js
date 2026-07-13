@@ -194,10 +194,10 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
 
   cardImageBtn.addEventListener("click", () => {
-    openModal(previewModal);
     previewModalImageEl.src = data.link;
     previewModalCaptionEl.textContent = data.name;
     previewModalImageEl.alt = data.name;
+    openModal(previewModal);
   });
 
   cardLikeBtn.addEventListener("click", (evt) => {
