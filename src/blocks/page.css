@@ -22,6 +22,10 @@
   top: 16px;
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 :focus-visible {
   outline: 3px solid #2d7ff9;
   outline-offset: 2px;

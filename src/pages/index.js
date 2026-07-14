@@ -216,6 +216,7 @@ let lastFocusedElement;
 function openModal(modal) {
   lastFocusedElement = document.activeElement;
   modal.classList.add("modal_opened");
+  document.body.classList.add("modal-open");
   document.addEventListener("keydown", handleEscapeKey);
   modal.querySelectorAll(".modal__form").forEach(clearFormError);
   const closeBtn = modal.querySelector(".modal__close-btn");
@@ -226,6 +227,7 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.body.classList.remove("modal-open");
   document.removeEventListener("keydown", handleEscapeKey);
   if (lastFocusedElement) {
     lastFocusedElement.focus();
