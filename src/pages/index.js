@@ -119,6 +119,14 @@ profileAvatar.addEventListener("error", () => {
   profileAvatar.alt = "Profile picture unavailable";
 });
 
+previewModalImageEl.addEventListener("error", () => {
+  const caption = previewModalCaptionEl.textContent;
+  previewModalImageEl.src = PLACEHOLDER_IMAGE;
+  previewModalImageEl.alt = caption
+    ? `${caption} (image unavailable)`
+    : "Image unavailable";
+});
+
 api
   .getAppInfo()
   .then(([cards, userData]) => {
@@ -229,6 +237,11 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.body.classList.remove("modal-open");
   document.removeEventListener("keydown", handleEscapeKey);
+  if (modal === previewModal) {
+    previewModalImageEl.removeAttribute("src");
+    previewModalImageEl.alt = "";
+    previewModalCaptionEl.textContent = "";
+  }
   if (lastFocusedElement) {
     lastFocusedElement.focus();
   }
