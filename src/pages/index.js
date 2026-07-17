@@ -195,6 +195,7 @@ function getCardElement(data) {
 
   cardNameEl.textContent = data.name;
   cardImageEl.alt = data.name;
+  cardRemoveBtn.setAttribute("aria-label", `Delete ${data.name}`);
   cardImageEl.addEventListener("error", () => {
     cardImageEl.src = PLACEHOLDER_IMAGE;
     cardImageEl.alt = `${data.name} (image unavailable)`;
