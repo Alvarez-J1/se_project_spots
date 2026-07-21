@@ -258,21 +258,33 @@ function handleEscapeKey(event) {
 }
 
 function handleLike(evt, cardId) {
-  const isLiked = evt.target.classList.contains("card__like-btn_liked");
+  const likeButton = evt.currentTarget;
+  if (likeButton.disabled) {
+    return;
+  }
+
+  const isLiked = likeButton.classList.contains("card__like-btn_liked");
+  likeButton.disabled = true;
+  likeButton.setAttribute("aria-busy", "true");
+
   api
     .changeLikeStatus(cardId, isLiked)
     .then((updatedData) => {
       if (updatedData.isLiked) {
-        evt.target.classList.add("card__like-btn_liked");
+        likeButton.classList.add("card__like-btn_liked");
       } else {
-        evt.target.classList.remove("card__like-btn_liked");
+        likeButton.classList.remove("card__like-btn_liked");
       }
-      updateLikeButtonState(evt.target, Boolean(updatedData.isLiked));
+      updateLikeButtonState(likeButton, Boolean(updatedData.isLiked));
       clearCardsStatus();
     })
     .catch((err) => {
       console.error(err);
       showCardsStatus(err.message);
+    })
+    .finally(() => {
+      likeButton.disabled = false;
+      likeButton.removeAttribute("aria-busy");
     });
 }
 

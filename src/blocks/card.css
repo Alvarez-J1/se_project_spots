@@ -50,6 +50,10 @@
   opacity: 1;
 }
 
+.card__like-btn:disabled {
+  cursor: not-allowed;
+}
+
 .card__like-btn_liked {
   background-image: url("../images/Heart.svg");
   opacity: 1;
