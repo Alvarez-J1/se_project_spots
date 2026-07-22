@@ -6,7 +6,7 @@
 .footer__copyright {
   margin: 0;
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 16px calc(60px + env(safe-area-inset-bottom, 0px));
   color: rgba(33, 33, 33, 0.7);
   line-height: 16px;
   font-size: 16px;
@@ -17,6 +17,6 @@
 
 @media screen and (max-width: 627px) {
   .footer__copyright {
-    padding: 40px 16px;
+    padding: 40px 16px calc(40px + env(safe-area-inset-bottom, 0px));
   }
 }
