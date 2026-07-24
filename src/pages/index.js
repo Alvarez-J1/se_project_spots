@@ -36,6 +36,7 @@ const profileDescriptionElement = document.querySelector(
 );
 const profileSection = document.querySelector(".profile");
 const cardsSection = document.querySelector(".cards");
+const mainContent = document.getElementById("main-content");
 const profileLoadError = document.getElementById("profile-load-error");
 const editModalDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
@@ -226,6 +227,7 @@ function openModal(modal) {
   lastFocusedElement = document.activeElement;
   modal.classList.add("modal_opened");
   document.body.classList.add("modal-open");
+  mainContent.inert = true;
   document.addEventListener("keydown", handleEscapeKey);
   modal.querySelectorAll(".modal__form").forEach(clearFormError);
   const closeBtn = modal.querySelector(".modal__close-btn");
@@ -237,6 +239,7 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.body.classList.remove("modal-open");
+  mainContent.inert = false;
   document.removeEventListener("keydown", handleEscapeKey);
   if (modal === previewModal) {
     previewModalImageEl.removeAttribute("src");
