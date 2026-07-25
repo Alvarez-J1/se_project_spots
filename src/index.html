@@ -38,7 +38,12 @@
         <img id="logo__image" alt="Spot logo" class="header__logo" />
       </header>
       <main id="main-content" class="content" tabindex="-1">
-        <section class="profile page__section" aria-busy="true">
+        <section
+          class="profile page__section"
+          aria-labelledby="profile-heading"
+          aria-busy="true"
+        >
+          <h2 id="profile-heading" class="visually-hidden">Profile</h2>
           <div class="profile__avatar-container">
             <button class="profile__avatar-btn" type="button" aria-label="Edit profile avatar">
               <img
