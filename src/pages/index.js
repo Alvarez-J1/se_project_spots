@@ -222,7 +222,6 @@ function getCardElement(data) {
   cardRemoveBtn.addEventListener("click", () =>
     handleDeleteCard(cardElement, data._id)
   );
-  //cardRemoveBtn.classList.toggle("card__remove-btn_hovered");
   return cardElement;
 }
 
