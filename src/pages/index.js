@@ -195,11 +195,11 @@ function getCardElement(data) {
   updateLikeButtonState(cardLikeBtn, Boolean(data.isLiked));
 
   cardNameEl.textContent = data.name;
-  cardImageEl.alt = data.name;
+  cardImageBtn.setAttribute("aria-label", `View ${data.name} in full size`);
+  cardImageEl.alt = "";
   cardRemoveBtn.setAttribute("aria-label", `Delete ${data.name}`);
   cardImageEl.addEventListener("error", () => {
     cardImageEl.src = PLACEHOLDER_IMAGE;
-    cardImageEl.alt = `${data.name} (image unavailable)`;
   });
   cardImageEl.src = data.link;
 
