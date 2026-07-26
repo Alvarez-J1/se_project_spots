@@ -64,6 +64,7 @@ const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 // Delete Form Elements
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = document.forms["remove-form"];
+const deleteTitle = deleteModal.querySelector("#delete-title");
 const cancelBtn = deleteModal.querySelector("#cancel-btn");
 
 // Card-related
@@ -250,6 +251,9 @@ function closeModal(modal) {
     previewModalImageEl.alt = "";
     previewModalCaptionEl.textContent = "";
   }
+  if (modal === deleteModal) {
+    deleteTitle.textContent = "Are you sure you want to delete this image?";
+  }
   if (lastFocusedElement) {
     lastFocusedElement.focus();
   }
@@ -302,6 +306,12 @@ function handleLike(evt, cardId) {
 function handleDeleteCard(cardElement, cardId) {
   selectedCard = cardElement;
   selectedCardId = cardId;
+  const cardName = cardElement
+    .querySelector(".card__title")
+    ?.textContent.trim();
+  deleteTitle.textContent = cardName
+    ? `Are you sure you want to delete "${cardName}"?`
+    : "Are you sure you want to delete this image?";
   openModal(deleteModal);
 }
 
