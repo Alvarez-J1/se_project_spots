@@ -30,6 +30,12 @@ https://alvarez-j1.github.io/se_project_spots/
 - normalize.css
 - GitHub Pages deployment via `gh-pages`
 
+## Accessibility Notes
+
+- Keyboard users can skip directly to the main content and see visible focus states.
+- Modals can be closed with the close button, overlay click, or `Escape`.
+- Form and card status messages use alert/live regions so errors are announced.
+
 ## Getting Started
 
 ### Prerequisites
