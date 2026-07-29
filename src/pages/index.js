@@ -149,6 +149,7 @@ api
         ? err.message
         : "Could not load your profile. Please refresh and try again.";
     profileLoadError.hidden = false;
+    showCardsStatus("Could not load spots. Please refresh and try again.");
   })
   .finally(() => {
     profileSection.removeAttribute("aria-busy");
