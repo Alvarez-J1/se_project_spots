@@ -41,12 +41,14 @@ const toggleButtonState = (inputList, buttonEl, config) => {
     disableButton(buttonEl, config);
   } else {
     buttonEl.disabled = false;
+    buttonEl.removeAttribute("aria-disabled");
     buttonEl.classList.remove(config.inactiveButtonClass);
   }
 };
 
 export const disableButton = (buttonEl, config) => {
   buttonEl.disabled = true;
+  buttonEl.setAttribute("aria-disabled", "true");
   buttonEl.classList.add(config.inactiveButtonClass);
 };
 
