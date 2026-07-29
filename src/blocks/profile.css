@@ -25,7 +25,8 @@
   position: relative;
 }
 
-.profile__avatar-container:hover .profile__avatar-btn {
+.profile__avatar-container:hover .profile__avatar-btn,
+.profile__avatar-btn:focus-visible {
   visibility: visible;
   background: rgba(0, 0, 0, 0.5);
 }
