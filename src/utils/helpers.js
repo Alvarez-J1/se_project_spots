@@ -7,12 +7,16 @@ export function setButtonText(
   if (isLoading) {
     submitBtn.textContent = loadingText;
     submitBtn.disabled = true;
+    submitBtn.setAttribute("aria-disabled", "true");
     submitBtn.setAttribute("aria-busy", "true");
   } else {
     submitBtn.textContent = defaultText;
     submitBtn.removeAttribute("aria-busy");
     if (!submitBtn.classList.contains("modal__submit-btn_disabled")) {
       submitBtn.disabled = false;
+      submitBtn.removeAttribute("aria-disabled");
+    } else {
+      submitBtn.setAttribute("aria-disabled", "true");
     }
   }
 }
