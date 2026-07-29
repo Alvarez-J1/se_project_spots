@@ -51,7 +51,12 @@
         >
           <h2 id="profile-heading" class="visually-hidden">Profile</h2>
           <div class="profile__avatar-container">
-            <button class="profile__avatar-btn" type="button" aria-label="Edit profile avatar">
+            <button
+              class="profile__avatar-btn"
+              type="button"
+              aria-label="Edit profile avatar"
+              aria-controls="avatar-modal"
+            >
               <img
                 class="profile__pencil-icon"
                 src="<%= require('./images/pencil-icon.svg') %>"
@@ -71,7 +76,11 @@
             >
               Could not load your profile. Please refresh and try again.
             </p>
-            <button type="button" class="profile__edit-btn">
+            <button
+              type="button"
+              class="profile__edit-btn"
+              aria-controls="edit-profile-modal"
+            >
               <img
                 id="pencil__image"
                 alt=""
@@ -79,7 +88,11 @@
               />Edit Profile
             </button>
           </div>
-          <button type="button" class="profile__add-btn">
+          <button
+            type="button"
+            class="profile__add-btn"
+            aria-controls="add-card-modal"
+          >
             <img id="plus__image" alt="" class="profile__plus-icn" />New
             Post
           </button>
