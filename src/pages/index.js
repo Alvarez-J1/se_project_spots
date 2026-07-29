@@ -381,6 +381,7 @@ function handleDeleteSubmit(evt) {
     .then(() => {
       selectedCard.remove();
       updateCardsEmptyState();
+      clearCardsStatus();
       closeModal(deleteModal);
     })
     .catch((err) => {
@@ -412,6 +413,7 @@ function handleAddCardSubmit(evt) {
     .addNewCard(inputValues)
     .then((data) => {
       renderCard(data);
+      clearCardsStatus();
       form.reset();
       disableButton(cardSubmitButton, settings);
       closeModal(cardModal);
