@@ -326,8 +326,8 @@ function handleEditFormSubmit(evt) {
 
   api
     .editUserInfo({
-      name: editModalNameInput.value,
-      about: editModalDescriptionInput.value,
+      name: editModalNameInput.value.trim(),
+      about: editModalDescriptionInput.value.trim(),
     })
     .then((data) => {
       profileNameElement.textContent = data.name;
