@@ -255,6 +255,8 @@ function closeModal(modal) {
   }
   if (modal === deleteModal) {
     deleteTitle.textContent = "Are you sure you want to delete this image?";
+    selectedCard = undefined;
+    selectedCardId = undefined;
   }
   if (lastFocusedElement) {
     lastFocusedElement.focus();
