@@ -404,8 +404,8 @@ function handleAddCardSubmit(evt) {
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
   const inputValues = {
-    name: cardNameInput.value,
-    link: cardLinkInput.value,
+    name: cardNameInput.value.trim(),
+    link: cardLinkInput.value.trim(),
   };
   api
     .addNewCard(inputValues)
