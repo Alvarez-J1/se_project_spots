@@ -252,7 +252,9 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 17.6px;
-  width: 630px;
+  width: 100%;
+  max-width: 630px;
+  box-sizing: border-box;
 }
 
 .modal__form-error {
