@@ -27,6 +27,7 @@ export function showFormError(formEl, message) {
     errorEl = document.createElement("p");
     errorEl.className = "modal__form-error";
     errorEl.setAttribute("role", "alert");
+    errorEl.setAttribute("aria-live", "assertive");
     formEl.prepend(errorEl);
   }
   errorEl.textContent =
