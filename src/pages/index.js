@@ -352,7 +352,7 @@ function handleAvatarFormSubmit(evt) {
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
 
-  const avatar = avatarInput.value;
+  const avatar = avatarInput.value.trim();
   api
     .editAvatar(avatar)
     .then((userData) => {
