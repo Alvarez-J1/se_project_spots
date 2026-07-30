@@ -45,20 +45,16 @@ const editModalDescriptionInput = editProfileModal.querySelector(
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 // Form Elements
 const profileForm = document.forms["profile-form"];
-const editModalCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const editModalNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = document.forms["card-form"];
 const cardSubmitButton = cardModal.querySelector(".modal__submit-btn");
-const cardModalCloseBtn = cardModal.querySelector("#add-profile-close-btn");
 
 // Avatar Elements
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = document.forms["avatar-form"];
-const avatarSubmitButton = avatarModal.querySelector("#avatar__submit-btn");
-const avatarModalCloseBtn = avatarModal.querySelector("#avatar__close-btn");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 
 // Delete Form Elements
@@ -78,9 +74,6 @@ const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
-const previewModalCloseBtn = previewModal.querySelector(
-  ".modal__close-btn-preview"
-);
 
 let selectedCard;
 let selectedCardId;
