@@ -36,6 +36,10 @@ https://alvarez-j1.github.io/se_project_spots/
 - Modals can be closed with the close button, overlay click, or `Escape`.
 - Form and card status messages use alert/live regions so errors are announced.
 
+## API Notes
+
+The app reads and writes profile and card data through the TripleTen Around API. Network failures are surfaced in the profile, card status, or form error areas depending on the action.
+
 ## Getting Started
 
 ### Prerequisites
