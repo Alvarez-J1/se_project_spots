@@ -42,7 +42,7 @@
 }
 
 #delete-content {
-  width: 630px;
+  width: min(630px, 100%);
   padding: 20px 20px 32px;
   border-radius: 8px;
 }
