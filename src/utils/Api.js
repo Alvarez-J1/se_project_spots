@@ -64,13 +64,13 @@ export default class Api {
   }
 
   removeCard(cardId) {
-    return this._request(`/cards/${cardId}`, {
+    return this._request(`/cards/${encodeURIComponent(cardId)}`, {
       method: "DELETE",
     });
   }
 
   changeLikeStatus(cardId, isLiked) {
-    return this._request(`/cards/${cardId}/likes`, {
+    return this._request(`/cards/${encodeURIComponent(cardId)}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
     });
   }
