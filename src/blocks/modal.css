@@ -160,9 +160,6 @@
   padding: 4px 8px;
 }
 
-#addprofile-close-btn {
-  top: 0;
-}
 .modal__close-btn {
   position: absolute;
   background: transparent url(../images/close-btn-default.svg) center no-repeat;
