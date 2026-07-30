@@ -130,7 +130,7 @@ api
     profileDescriptionElement.textContent = userData.about;
     updateProfileAvatarAlt(userData.name);
     cards.forEach((item) => {
-      renderCard(item);
+      renderCard(item, "append");
     });
     updateCardsEmptyState();
   })
