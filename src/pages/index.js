@@ -6,8 +6,8 @@ import Api from "../utils/Api.js";
 const plusImage = document.getElementById("plus__image");
 plusImage.src = plusSrc;
 
-const PencilImage = document.getElementById("pencil__image");
-PencilImage.src = editBtnSrc;
+const pencilImage = document.getElementById("pencil__image");
+pencilImage.src = editBtnSrc;
 
 const logoImage = document.getElementById("logo__image");
 logoImage.src = logoSrc;
