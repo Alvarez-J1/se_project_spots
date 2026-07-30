@@ -3,6 +3,7 @@ import { setButtonText, showFormError, clearFormError } from "../utils/helpers.j
 import editBtnSrc from "../images/editBtnSrc.svg";
 import plusSrc from "../images/plus.svg";
 import Api from "../utils/Api.js";
+import "./index.css";
 const plusImage = document.getElementById("plus__image");
 plusImage.src = plusSrc;
 
@@ -17,7 +18,6 @@ if (footerYear) {
   footerYear.textContent = new Date().getFullYear();
 }
 
-import "./index.css";
 import {
   enableValidation,
   settings,
