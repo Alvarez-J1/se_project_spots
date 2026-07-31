@@ -1,5 +1,9 @@
 import logoSrc from "../images/logo.svg";
-import { setButtonText, showFormError, clearFormError } from "../utils/helpers.js";
+import {
+  setButtonText,
+  showFormError,
+  clearFormError,
+} from "../utils/helpers.js";
 import editBtnSrc from "../images/editBtnSrc.svg";
 import plusSrc from "../images/plus.svg";
 import Api from "../utils/Api.js";
