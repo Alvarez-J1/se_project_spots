@@ -107,7 +107,8 @@
   cursor: pointer;
 }
 
-.profile__edit-btn:hover {
+.profile__edit-btn:hover,
+.profile__edit-btn:focus-visible {
   opacity: 1;
 }
 
