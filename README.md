@@ -4,7 +4,7 @@ Spots is a responsive, single-page social app where users manage a profile and s
 
 ## Live Demo
 
-https://alvarez-j1.github.io/se_project_spots/
+https://alvarez-j1.github.io/Spots/
 
 ## Features
 
@@ -53,8 +53,8 @@ Source files live in `src/`. Run `npm run build` to generate a fresh production 
 ### Installation
 
 ```bash
-git clone https://github.com/Alvarez-J1/se_project_spots.git
-cd se_project_spots
+git clone https://github.com/Alvarez-J1/Spots.git
+cd Spots
 npm install
 ```
 

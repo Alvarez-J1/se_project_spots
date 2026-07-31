@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alvarez-J1/se_project_spots.git"
+    "url": "git+https://github.com/Alvarez-J1/Spots.git"
   },
   "keywords": [
     "JA"
@@ -38,7 +38,7 @@
     "core-js": "3.23.5"
   },
   "bugs": {
-    "url": "https://github.com/Alvarez-J1/se_project_spots/issues"
+    "url": "https://github.com/Alvarez-J1/Spots/issues"
   },
-  "homepage": "https://github.com/Alvarez-J1/se_project_spots#readme"
+  "homepage": "https://alvarez-j1.github.io/Spots/"
 }
