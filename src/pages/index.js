@@ -258,7 +258,7 @@ function closeModal(modal) {
     selectedCard = undefined;
     selectedCardId = undefined;
   }
-  if (lastFocusedElement) {
+  if (lastFocusedElement?.isConnected) {
     lastFocusedElement.focus();
   }
 }
