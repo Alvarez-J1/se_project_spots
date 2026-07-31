@@ -301,7 +301,7 @@ function handleLike(evt, cardId) {
     })
     .catch((err) => {
       console.error(err);
-      showCardsStatus(err.message);
+      showCardsStatus(err?.message);
     })
     .finally(() => {
       likeButton.disabled = false;
