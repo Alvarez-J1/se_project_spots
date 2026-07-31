@@ -9,15 +9,21 @@ export const settings = {
 
 const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
-  errorMsgEl.textContent = errorMsg;
+  if (errorMsgEl) {
+    errorMsgEl.textContent = errorMsg;
+  }
   inputEl.classList.add(config.inputErrorClass);
   inputEl.setAttribute("aria-invalid", "true");
-  inputEl.setAttribute("aria-describedby", `${inputEl.id}-error`);
+  if (errorMsgEl) {
+    inputEl.setAttribute("aria-describedby", `${inputEl.id}-error`);
+  }
 };
 
 const hideInputError = (formEl, inputEl, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
-  errorMsgEl.textContent = "";
+  if (errorMsgEl) {
+    errorMsgEl.textContent = "";
+  }
   inputEl.classList.remove(config.inputErrorClass);
   inputEl.removeAttribute("aria-invalid");
   inputEl.removeAttribute("aria-describedby");
