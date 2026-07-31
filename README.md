@@ -40,6 +40,10 @@ https://alvarez-j1.github.io/se_project_spots/
 
 The app reads and writes profile and card data through the TripleTen Around API. Network failures are surfaced in the profile, card status, or form error areas depending on the action.
 
+## Development Notes
+
+Source files live in `src/`. Run `npm run build` to generate a fresh production bundle in `dist/` before deploying.
+
 ## Getting Started
 
 ### Prerequisites
