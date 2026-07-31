@@ -319,10 +319,6 @@
     font-size: 20px;
   }
 
-  .modal__inner {
-    padding: 0;
-  }
-
   .modal_opened {
     visibility: visible;
   }
