@@ -99,7 +99,11 @@ closeButtons.forEach((button) => {
   // Find the closest popup only once
   const popup = button.closest(".modal");
   // Set the listener
-  button.addEventListener("click", () => closeModal(popup));
+  button.addEventListener("click", () => {
+    if (popup) {
+      closeModal(popup);
+    }
+  });
 });
 
 const api = new Api({
