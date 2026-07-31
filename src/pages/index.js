@@ -343,7 +343,7 @@ function handleEditFormSubmit(evt) {
     })
     .catch((err) => {
       console.error(err);
-      showFormError(form, err.message);
+      showFormError(form, err?.message);
     })
     .finally(() => {
       setButtonText(submitBtn, false);
@@ -367,7 +367,7 @@ function handleAvatarFormSubmit(evt) {
     })
     .catch((err) => {
       console.error(err);
-      showFormError(form, err.message);
+      showFormError(form, err?.message);
     })
     .finally(() => {
       setButtonText(submitBtn, false);
@@ -394,7 +394,7 @@ function handleDeleteSubmit(evt) {
     })
     .catch((err) => {
       console.error(err);
-      showFormError(form, err.message);
+      showFormError(form, err?.message);
     })
     .finally(() => {
       setButtonText(submitBtn, false, "Delete", "Deleting...");
@@ -428,7 +428,7 @@ function handleAddCardSubmit(evt) {
     })
     .catch((err) => {
       console.error(err);
-      showFormError(form, err.message);
+      showFormError(form, err?.message);
     })
     .finally(() => {
       setButtonText(submitBtn, false);
