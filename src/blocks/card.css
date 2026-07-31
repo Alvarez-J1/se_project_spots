@@ -91,7 +91,7 @@
 }
 
 .card__remove-btn:hover {
-  background: url(../images/remove-hover.svg);
+  background: transparent url("../images/remove-hover.svg") center no-repeat;
 }
 @media screen and (max-width: 627px) {
   .card__image {
