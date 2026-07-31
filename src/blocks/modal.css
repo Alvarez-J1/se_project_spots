@@ -238,6 +238,7 @@
   color: rgba(33, 33, 33, 1);
   border-radius: 8px;
   border: 1px solid rgba(33, 33, 33, 0.4);
+  box-sizing: border-box;
   cursor: text;
 }
 
