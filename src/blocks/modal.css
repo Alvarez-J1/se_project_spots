@@ -392,10 +392,6 @@
     max-height: fit-content;
   }
 
-  #addprofile-close-btn {
-    top: 0;
-  }
-
   .modal__caption {
     margin-top: 8px;
   }
