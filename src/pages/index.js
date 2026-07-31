@@ -281,6 +281,7 @@ function handleLike(evt, cardId) {
   clearCardsStatus();
   const isLiked = likeButton.classList.contains("card__like-btn_liked");
   likeButton.disabled = true;
+  likeButton.setAttribute("aria-disabled", "true");
   likeButton.setAttribute("aria-busy", "true");
 
   api
@@ -304,6 +305,7 @@ function handleLike(evt, cardId) {
     })
     .finally(() => {
       likeButton.disabled = false;
+      likeButton.removeAttribute("aria-disabled");
       likeButton.removeAttribute("aria-busy");
     });
 }
