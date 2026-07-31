@@ -4,6 +4,13 @@ import editBtnSrc from "../images/editBtnSrc.svg";
 import plusSrc from "../images/plus.svg";
 import Api from "../utils/Api.js";
 import "./index.css";
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  disableButton,
+} from "./validation.js";
+
 const plusImage = document.getElementById("plus__image");
 plusImage.src = plusSrc;
 
@@ -17,13 +24,6 @@ const footerYear = document.querySelector(".footer__year");
 if (footerYear) {
   footerYear.textContent = new Date().getFullYear();
 }
-
-import {
-  enableValidation,
-  settings,
-  resetValidation,
-  disableButton,
-} from "./validation.js";
 
 //profile elements
 const editProfileModal = document.querySelector("#edit-profile-modal");
