@@ -370,7 +370,7 @@
   }
 
   .modal__error {
-    width: 276px;
+    width: 100%;
   }
 
   .modal__content {
