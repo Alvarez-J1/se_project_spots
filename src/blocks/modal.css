@@ -196,6 +196,7 @@
   height: 52px;
   width: 156px;
   border-radius: 8px;
+  border: none;
   background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
   line-height: 16px;
