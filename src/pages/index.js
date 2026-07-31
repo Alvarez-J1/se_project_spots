@@ -158,7 +158,7 @@ function updateProfileAvatarAlt(name) {
 }
 
 function updateCardsEmptyState() {
-  cardsEmpty.hidden = cardsList.children.length > 0;
+  cardsEmpty.hidden = cardsList.childElementCount > 0;
 }
 
 function showCardsStatus(message) {
