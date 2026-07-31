@@ -44,6 +44,7 @@
   width: 23px;
   border: none;
   opacity: 0.4;
+  flex: 0 0 auto;
   cursor: pointer;
   margin: 0;
   padding: 0;
