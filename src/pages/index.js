@@ -260,6 +260,10 @@ function openModal(modal) {
 }
 
 function closeModal(modal) {
+  if (!modal) {
+    return;
+  }
+
   modal.classList.remove("modal_opened");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
