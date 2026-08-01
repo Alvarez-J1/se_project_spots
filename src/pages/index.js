@@ -461,6 +461,7 @@ profileEditButton.addEventListener("click", () => {
 });
 
 profileAddButton.addEventListener("click", () => {
+  resetValidation(cardForm, [cardLinkInput, cardNameInput], settings);
   openModal(cardModal);
 });
 
