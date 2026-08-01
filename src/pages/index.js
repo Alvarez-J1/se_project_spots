@@ -109,6 +109,8 @@ closeButtons.forEach((button) => {
 const API_BASE_URL = "https://around-api.en.tripleten-services.com/v1";
 const API_AUTH_TOKEN = "40811508-9c36-428c-adef-ee0a4e68ed5a";
 const DEFAULT_CARDS_STATUS_MESSAGE = "Could not update like. Please try again.";
+const PROFILE_LOAD_ERROR_MESSAGE =
+  "Could not load your profile. Please refresh and try again.";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -152,7 +154,7 @@ api
     profileLoadError.textContent =
       err instanceof Error && err.message
         ? err.message
-        : "Could not load your profile. Please refresh and try again.";
+        : PROFILE_LOAD_ERROR_MESSAGE;
     profileLoadError.hidden = false;
     showCardsStatus("Could not load spots. Please refresh and try again.");
   })
