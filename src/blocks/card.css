@@ -79,6 +79,7 @@
   position: absolute;
   border: none;
   background-color: transparent;
+  background-size: 32px 32px;
   cursor: pointer;
 }
 
