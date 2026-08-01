@@ -274,6 +274,7 @@ function closeModal(modal) {
   if (lastFocusedElement?.isConnected) {
     lastFocusedElement.focus();
   }
+  lastFocusedElement = undefined;
 }
 
 function handleEscapeKey(event) {
