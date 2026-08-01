@@ -239,6 +239,10 @@ function getCardElement(data) {
 let lastFocusedElement;
 
 function openModal(modal) {
+  if (!modal) {
+    return;
+  }
+
   lastFocusedElement = document.activeElement;
   modal.classList.add("modal_opened");
   modal.setAttribute("aria-hidden", "false");
