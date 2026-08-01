@@ -465,6 +465,7 @@ profileAddButton.addEventListener("click", () => {
 });
 
 avatarModalBtn.addEventListener("click", () => {
+  resetValidation(avatarForm, [avatarInput], settings);
   openModal(avatarModal);
 });
 
