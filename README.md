@@ -44,6 +44,10 @@ The app reads and writes profile and card data through the TripleTen Around API.
 
 Source files live in `src/`. Run `npm run build` to generate a fresh production bundle in `dist/` before deploying.
 
+## Checks
+
+Use `npm run build` as the main project verification step before publishing changes.
+
 ## Getting Started
 
 ### Prerequisites
