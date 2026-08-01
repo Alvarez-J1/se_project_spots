@@ -196,8 +196,7 @@
   }
 
   .profile__description {
-    margin: 0 auto;
-    margin-bottom: 32px;
+    margin: 0 auto 32px;
   }
 
   .profile__pencil-icn {
