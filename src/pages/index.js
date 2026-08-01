@@ -113,6 +113,8 @@ const PROFILE_LOAD_ERROR_MESSAGE =
   "Could not load your profile. Please refresh and try again.";
 const CARDS_LOAD_ERROR_MESSAGE =
   "Could not load spots. Please refresh and try again.";
+const DELETE_CONFIRMATION_MESSAGE =
+  "Are you sure you want to delete this image?";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -265,7 +267,7 @@ function closeModal(modal) {
     previewModalCaptionEl.textContent = "";
   }
   if (modal === deleteModal) {
-    deleteTitle.textContent = "Are you sure you want to delete this image?";
+    deleteTitle.textContent = DELETE_CONFIRMATION_MESSAGE;
     selectedCard = undefined;
     selectedCardId = undefined;
   }
@@ -329,7 +331,7 @@ function handleDeleteCard(cardElement, cardId) {
     ?.textContent.trim();
   deleteTitle.textContent = cardName
     ? `Are you sure you want to delete "${cardName}"?`
-    : "Are you sure you want to delete this image?";
+    : DELETE_CONFIRMATION_MESSAGE;
   openModal(deleteModal);
 }
 
