@@ -108,6 +108,7 @@ closeButtons.forEach((button) => {
 
 const API_BASE_URL = "https://around-api.en.tripleten-services.com/v1";
 const API_AUTH_TOKEN = "40811508-9c36-428c-adef-ee0a4e68ed5a";
+const DEFAULT_CARDS_STATUS_MESSAGE = "Could not update like. Please try again.";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -169,8 +170,7 @@ function updateCardsEmptyState() {
 }
 
 function showCardsStatus(message) {
-  cardsStatus.textContent =
-    message || "Could not update like. Please try again.";
+  cardsStatus.textContent = message || DEFAULT_CARDS_STATUS_MESSAGE;
   cardsStatus.hidden = false;
 }
 
