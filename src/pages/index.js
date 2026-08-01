@@ -111,6 +111,8 @@ const API_AUTH_TOKEN = "40811508-9c36-428c-adef-ee0a4e68ed5a";
 const DEFAULT_CARDS_STATUS_MESSAGE = "Could not update like. Please try again.";
 const PROFILE_LOAD_ERROR_MESSAGE =
   "Could not load your profile. Please refresh and try again.";
+const CARDS_LOAD_ERROR_MESSAGE =
+  "Could not load spots. Please refresh and try again.";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -156,7 +158,7 @@ api
         ? err.message
         : PROFILE_LOAD_ERROR_MESSAGE;
     profileLoadError.hidden = false;
-    showCardsStatus("Could not load spots. Please refresh and try again.");
+    showCardsStatus(CARDS_LOAD_ERROR_MESSAGE);
   })
   .finally(() => {
     profileSection.removeAttribute("aria-busy");
