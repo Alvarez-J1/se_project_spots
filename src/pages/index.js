@@ -106,10 +106,13 @@ closeButtons.forEach((button) => {
   });
 });
 
+const API_BASE_URL = "https://around-api.en.tripleten-services.com/v1";
+const API_AUTH_TOKEN = "40811508-9c36-428c-adef-ee0a4e68ed5a";
+
 const api = new Api({
-  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  baseUrl: API_BASE_URL,
   headers: {
-    authorization: "40811508-9c36-428c-adef-ee0a4e68ed5a",
+    authorization: API_AUTH_TOKEN,
     "Content-Type": "application/json",
   },
 });
