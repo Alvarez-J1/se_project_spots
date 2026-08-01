@@ -45,6 +45,7 @@
   width: 23px;
   border: none;
   opacity: 0.4;
+  background-size: 23px 20px;
   flex: 0 0 auto;
   cursor: pointer;
   margin: 0;
