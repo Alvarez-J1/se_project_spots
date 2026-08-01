@@ -375,6 +375,7 @@ function handleAvatarFormSubmit(evt) {
     .editAvatar(avatar)
     .then((userData) => {
       profileAvatar.src = userData.avatar;
+      updateProfileAvatarAlt(profileNameElement.textContent.trim());
       form.reset();
       closeModal(avatarModal);
     })
