@@ -29,7 +29,7 @@ if (footerYear) {
   footerYear.textContent = new Date().getFullYear();
 }
 
-//profile elements
+// Profile elements
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileAddButton = document.querySelector(".profile__add-btn");
