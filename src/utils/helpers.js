@@ -4,6 +4,10 @@ export function setButtonText(
   defaultText = "Save",
   loadingText = "Saving..."
 ) {
+  if (!submitBtn) {
+    return;
+  }
+
   if (isLoading) {
     submitBtn.textContent = loadingText;
     submitBtn.disabled = true;
