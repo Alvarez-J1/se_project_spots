@@ -116,6 +116,7 @@ const DELETE_CONFIRMATION_MESSAGE =
 const DELETE_BUTTON_TEXT = "Delete";
 const DELETE_LOADING_TEXT = "Deleting...";
 const MISSING_DELETE_SELECTION_MESSAGE = "Choose a card before deleting.";
+const FALLBACK_PROFILE_AVATAR_ALT = "Profile picture";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -169,7 +170,9 @@ api
   });
 
 function updateProfileAvatarAlt(name) {
-  profileAvatar.alt = name ? `${name}'s profile picture` : "Profile picture";
+  profileAvatar.alt = name
+    ? `${name}'s profile picture`
+    : FALLBACK_PROFILE_AVATAR_ALT;
 }
 
 function updateCardsEmptyState() {
