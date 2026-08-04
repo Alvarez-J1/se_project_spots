@@ -187,7 +187,7 @@ function clearCardsStatus() {
 }
 
 function getSubmitButton(form, evt) {
-  return evt.submitter || form.querySelector(settings.submitButtonSelector);
+  return evt.submitter || form?.querySelector(settings.submitButtonSelector);
 }
 
 function updateLikeButtonState(button, isLiked, cardName = "") {
