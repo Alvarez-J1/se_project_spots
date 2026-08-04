@@ -117,6 +117,7 @@ const DELETE_BUTTON_TEXT = "Delete";
 const DELETE_LOADING_TEXT = "Deleting...";
 const MISSING_DELETE_SELECTION_MESSAGE = "Choose a card before deleting.";
 const FALLBACK_PROFILE_AVATAR_ALT = "Profile picture";
+const UNAVAILABLE_PROFILE_AVATAR_ALT = "Profile picture unavailable";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -131,7 +132,7 @@ const PLACEHOLDER_IMAGE =
 
 profileAvatar.addEventListener("error", () => {
   profileAvatar.src = PLACEHOLDER_IMAGE;
-  profileAvatar.alt = "Profile picture unavailable";
+  profileAvatar.alt = UNAVAILABLE_PROFILE_AVATAR_ALT;
 });
 
 previewModalImageEl.addEventListener("error", () => {
