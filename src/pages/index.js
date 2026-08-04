@@ -415,7 +415,7 @@ function handleDeleteSubmit(evt) {
     showFormError(form, "Choose a card before deleting.");
     return;
   }
-  const submitBtn = evt.submitter;
+  const submitBtn = getSubmitButton(form, evt);
   setButtonText(submitBtn, true, "Delete", "Deleting...");
   api
     .removeCard(selectedCardId)
