@@ -183,6 +183,10 @@ function clearCardsStatus() {
   cardsStatus.textContent = "";
 }
 
+function getSubmitButton(form, evt) {
+  return evt.submitter || form.querySelector(settings.submitButtonSelector);
+}
+
 function updateLikeButtonState(button, isLiked, cardName = "") {
   button.setAttribute("aria-pressed", isLiked ? "true" : "false");
   const action = isLiked ? "Unlike" : "Like";
