@@ -260,6 +260,7 @@
 }
 
 .modal__form-error {
+  box-sizing: border-box;
   margin: 0 0 24px;
   color: rgba(255, 0, 0, 0.7);
   font-weight: 500;
