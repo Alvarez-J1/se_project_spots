@@ -266,6 +266,10 @@ function closeModal(modal) {
     return;
   }
 
+  if (!modal.classList.contains("modal_opened")) {
+    return;
+  }
+
   modal.classList.remove("modal_opened");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
