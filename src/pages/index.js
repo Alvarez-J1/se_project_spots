@@ -92,7 +92,7 @@ modals.forEach((modal) => {
   });
 });
 
-// Find all close buttons
+// Modal close buttons
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 
 closeButtons.forEach((button) => {
