@@ -241,6 +241,10 @@ function openModal(modal) {
     return;
   }
 
+  if (modal.classList.contains("modal_opened")) {
+    return;
+  }
+
   lastFocusedElement = document.activeElement;
   modal.classList.add("modal_opened");
   modal.setAttribute("aria-hidden", "false");
