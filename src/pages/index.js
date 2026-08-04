@@ -115,6 +115,7 @@ const DELETE_CONFIRMATION_MESSAGE =
   "Are you sure you want to delete this image?";
 const DELETE_BUTTON_TEXT = "Delete";
 const DELETE_LOADING_TEXT = "Deleting...";
+const MISSING_DELETE_SELECTION_MESSAGE = "Choose a card before deleting.";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -414,7 +415,7 @@ function handleDeleteSubmit(evt) {
   const form = evt.target;
   clearFormError(form);
   if (!selectedCard || !selectedCardId) {
-    showFormError(form, "Choose a card before deleting.");
+    showFormError(form, MISSING_DELETE_SELECTION_MESSAGE);
     return;
   }
   const submitBtn = getSubmitButton(form, evt);
