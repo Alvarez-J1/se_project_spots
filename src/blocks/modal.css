@@ -233,6 +233,7 @@
 }
 
 .modal__input {
+  width: 100%;
   padding: 16px 12px;
   font-weight: 500;
   font-size: 20px;
