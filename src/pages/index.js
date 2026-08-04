@@ -113,6 +113,8 @@ const CARDS_LOAD_ERROR_MESSAGE =
   "Could not load spots. Please refresh and try again.";
 const DELETE_CONFIRMATION_MESSAGE =
   "Are you sure you want to delete this image?";
+const DELETE_BUTTON_TEXT = "Delete";
+const DELETE_LOADING_TEXT = "Deleting...";
 
 const api = new Api({
   baseUrl: API_BASE_URL,
@@ -416,7 +418,7 @@ function handleDeleteSubmit(evt) {
     return;
   }
   const submitBtn = getSubmitButton(form, evt);
-  setButtonText(submitBtn, true, "Delete", "Deleting...");
+  setButtonText(submitBtn, true, DELETE_BUTTON_TEXT, DELETE_LOADING_TEXT);
   api
     .removeCard(selectedCardId)
     .then(() => {
@@ -430,7 +432,7 @@ function handleDeleteSubmit(evt) {
       showFormError(form, err?.message);
     })
     .finally(() => {
-      setButtonText(submitBtn, false, "Delete", "Deleting...");
+      setButtonText(submitBtn, false, DELETE_BUTTON_TEXT, DELETE_LOADING_TEXT);
     });
 }
 
