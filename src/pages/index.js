@@ -285,7 +285,7 @@ function closeModal(modal) {
 
 function handleEscapeKey(event) {
   if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened"); // Find the currently open modal
+    const openModal = document.querySelector(".modal_opened");
     if (openModal) {
       closeModal(openModal);
     }
