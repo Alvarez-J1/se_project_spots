@@ -43,6 +43,7 @@ The app reads and writes profile and card data through the TripleTen Around API.
 ## Development Notes
 
 Source files live in `src/`. Run `npm run build` to generate a fresh production bundle in `dist/` before deploying.
+The production site is published from the `gh-pages` branch at https://alvarez-j1.github.io/Spots/.
 
 ## Checks
 
