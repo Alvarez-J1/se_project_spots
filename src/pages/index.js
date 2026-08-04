@@ -444,7 +444,7 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const form = evt.target;
   clearFormError(form);
-  const submitBtn = evt.submitter;
+  const submitBtn = getSubmitButton(form, evt);
   setButtonText(submitBtn, true);
   const inputValues = {
     name: cardNameInput.value.trim(),
