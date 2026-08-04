@@ -96,9 +96,7 @@ modals.forEach((modal) => {
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 
 closeButtons.forEach((button) => {
-  // Find the closest popup only once
   const popup = button.closest(".modal");
-  // Set the listener
   button.addEventListener("click", () => {
     if (popup) {
       closeModal(popup);
